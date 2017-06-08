@@ -115,7 +115,6 @@ var url = "mongodb://localhost:27017/stu";
   //if (err) throw err;
   //var myobj = [
   //{Name:"john",Maths_Marks:87,English_Marks:23}
-
   //];
   //db.collection("stumark").insert(myobj, function(err, res) {
   //if (err) throw err;
@@ -124,13 +123,34 @@ var url = "mongodb://localhost:27017/stu";
   //});
 //});
 
-//MongoClient.connect(url, function(err, db) {
-//if (err) throw err;
-var myquery = {Name:"john",Maths_Marks:87,English_Marks:23};
-var newvalues = {Name:"john",Maths_Marks:87,Science_Marks:23};
-db.collection("stumark").update(myquery, newvalues, function(err, res) {
-if (err) throw err;
-console.log(res.result.nModified + " record updated");
-db.close();
-});
+// MongoClient.connect(url, function(err, db) {
+// f (err) throw err;
+// var myquery = {Name:"john",Maths_Marks:87,English_Marks:23};
+// var newvalues = {Name:"john",Maths_Marks:87,Science_Marks:23};
+// db.collection("stumark").update(myquery, newvalues, function(err, res) {
+// if (err) throw err;
+// console.log(res.result.nModified + " record updated");
+// db.close();
+// });
+// });
+
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var myquery = {Name:"kumaran" };
+//   db.collection("stumark").remove(myquery, function(err, obj) {
+//     if (err) throw err;
+//     console.log(obj.result.n + " document(s) deleted");
+//     db.close();
+//   });
+// });
+
+
+
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+  db.collection("stumark").find({$or:[{Name:"kala"},{Name:"aruli"}]},{Maths_Marks:1,Science_Marks:1,Name:1,_id:0}).toArray(function(err, result) {
+    if (err) throw err;
+    console.log(result);
+    db.close();
+  });
 });
