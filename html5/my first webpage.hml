@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+  <TITLE>My First Web Page</TITLE>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <script src="action.js"> </script>
+</HEAD>
+<BODY>
+  <H1>Welcome to Uki</H1>
+  <P>
+    <IMG SRC=IMG.png alt="HELLO WORLD">
+  </p>
+  <P>
+    Hello World
+    This is my first web Page on Uki
+  </P>
+</bODY>
+</HEML>
